@@ -652,6 +652,7 @@ class StepContext extends AbstractExtensibleContext {
             remoteJenkinsName(remoteJenkins)
             job(jobName)
             shouldNotFailBuild(context.shouldNotFailBuild)
+            enhancedLogging(context.enhancedLogging)
             pollInterval(context.pollInterval)
             preventRemoteBuildQueue(context.preventRemoteBuildQueue)
             blockBuildUntilComplete(context.blockBuildUntilComplete)
