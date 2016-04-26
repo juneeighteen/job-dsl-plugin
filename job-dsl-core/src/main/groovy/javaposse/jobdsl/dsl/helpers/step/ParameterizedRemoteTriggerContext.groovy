@@ -8,6 +8,7 @@ class ParameterizedRemoteTriggerContext implements Context {
     int pollInterval = 10
     boolean preventRemoteBuildQueue = false
     boolean blockBuildUntilComplete = false
+    boolean enhancedLogging = false
     String token
 
     /**
@@ -29,6 +30,13 @@ class ParameterizedRemoteTriggerContext implements Context {
      */
     void shouldNotFailBuild(boolean shouldNotFailBuild = true) {
         this.shouldNotFailBuild = shouldNotFailBuild
+    }
+
+    /**
+    * If set, enables enhanced logging. Defaults to {@code false}.
+    */
+    void enhancedLogging(boolean enhancedLogging = true) {
+      this.enhancedLogging = enhancedLogging
     }
 
     /**

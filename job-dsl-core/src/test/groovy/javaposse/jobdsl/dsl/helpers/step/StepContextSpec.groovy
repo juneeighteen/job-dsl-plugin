@@ -2476,11 +2476,12 @@ class StepContextSpec extends Specification {
         context.stepNodes.size() == 1
         with(context.stepNodes[0]) {
             name() == 'org.jenkinsci.plugins.ParameterizedRemoteTrigger.RemoteBuildConfiguration'
-            children().size() == 14
+            children().size() == 15
             token[0].value() == ''
             remoteJenkinsName[0].value() == 'dev-ci'
             job[0].value() == 'test'
             shouldNotFailBuild[0].value() == false
+            enhancedLogging[0].value() == false
             pollInterval[0].value() == 10
             preventRemoteBuildQueue[0].value() == false
             blockBuildUntilComplete[0].value() == false
@@ -2513,7 +2514,7 @@ class StepContextSpec extends Specification {
         context.stepNodes.size() == 1
         with(context.stepNodes[0]) {
             name() == 'org.jenkinsci.plugins.ParameterizedRemoteTrigger.RemoteBuildConfiguration'
-            children().size() == 14
+            children().size() == 15
             token[0].value() == ''
             remoteJenkinsName[0].value() == 'dev-ci'
             job[0].value() == 'test'
@@ -2550,6 +2551,7 @@ class StepContextSpec extends Specification {
             pollInterval 100
             preventRemoteBuildQueue true
             blockBuildUntilComplete true
+            enhancedLogging true
             token 'test'
         }
 
@@ -2557,11 +2559,12 @@ class StepContextSpec extends Specification {
         context.stepNodes.size() == 1
         with(context.stepNodes[0]) {
             name() == 'org.jenkinsci.plugins.ParameterizedRemoteTrigger.RemoteBuildConfiguration'
-            children().size() == 14
+            children().size() == 15
             token[0].value() == 'test'
             remoteJenkinsName[0].value() == 'dev-ci'
             job[0].value() == 'test'
             shouldNotFailBuild[0].value() == true
+            enhancedLogging[0].value()  == true
             pollInterval[0].value() == 100
             preventRemoteBuildQueue[0].value() == true
             blockBuildUntilComplete[0].value() == true
